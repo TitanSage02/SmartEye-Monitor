@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useCallback } from "react";
 import { Incident, IncidentType } from "../types/incident";
 import { fetchIncidents } from "../services/incidentService";
@@ -108,7 +109,7 @@ export function Dashboard() {
   };
 
   return (
-    <div className="container mx-auto py-6 px-4 sm:px-6">
+    <div className="container mx-auto py-6 px-4 sm:px-6 min-h-screen flex flex-col">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Dashboard de Monitoring</h1>
@@ -132,7 +133,7 @@ export function Dashboard() {
         </div>
       </div>
       
-      <div className="bg-card rounded-lg border shadow-sm p-6 mb-6">
+      <div className="bg-card rounded-lg border shadow-sm p-6 mb-6 flex-grow">
         <IncidentFilters onFilterChange={handleFilterChange} />
         
         <div className="mb-4 flex justify-between items-center">
@@ -151,6 +152,10 @@ export function Dashboard() {
           isLoading={isLoading} 
         />
       </div>
+
+      <footer className="mt-auto py-4 text-center text-sm text-muted-foreground border-t">
+        <p>© 2025 SmartEye - Système intelligent de surveillance ^ Hackathon FRIARE 2025 | Tous droits réservés</p>
+      </footer>
     </div>
   );
 }
