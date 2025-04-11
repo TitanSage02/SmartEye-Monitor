@@ -3,7 +3,7 @@ import { Incident } from "../types/incident";
 import { toast } from "../hooks/use-toast";
 
 // API URL
-const API_URL = "https://smarteye-793fa8ced729.herokuapp.com/";
+const API_URL = "https://smarteye-793fa8ced729.herokuapp.com";
 
 export async function fetchIncidents(): Promise<Incident[]> {
   try {
