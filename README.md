@@ -43,8 +43,8 @@ Le projet est construit avec les technologies suivantes :
 
 ```bash
 # Cloner le dépôt
-git clone <url-du-depot>
-cd smart-eye-monitoring
+git clone 
+cd 
 
 # Installer les dépendances
 npm install
