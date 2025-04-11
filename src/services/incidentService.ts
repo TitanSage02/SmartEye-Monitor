@@ -2,16 +2,17 @@
 import { Incident } from "../types/incident";
 import { toast } from "../hooks/use-toast";
 
-// This will be replaced with your actual API URL
+// API URL
 const API_URL = "https://api.example.com";
 
 export async function fetchIncidents(): Promise<Incident[]> {
   try {
     // In a real application, this would be your API endpoint
-    // const response = await fetch(`${API_URL}/incidents`);
+    const response = await fetch(`${API_URL}/incidents`);
+    return await response.json();    
     
-    // For now, let's use mock data
-    return Promise.resolve(mockIncidents);
+    // // For now, let's use mock data
+    // return Promise.resolve(mockIncidents);
   } catch (error) {
     toast({
       title: "Error fetching incidents",
