@@ -3,14 +3,14 @@ import { Incident } from "../types/incident";
 import { toast } from "../hooks/use-toast";
 
 // API URL
-const API_URL = "https://api.example.com";
+const API_URL = "https://smarteye-793fa8ced729.herokuapp.com/";
 
 export async function fetchIncidents(): Promise<Incident[]> {
   try {
     // In a real application, this would be your API endpoint
     const response = await fetch(`${API_URL}/incidents`);
     return await response.json();    
-    
+
     // // For now, let's use mock data
     // return Promise.resolve(mockIncidents);
   } catch (error) {
