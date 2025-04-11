@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback } from "react";
 import { Incident, IncidentType } from "../types/incident";
 import { fetchIncidents } from "../services/incidentService";
@@ -27,12 +26,6 @@ export function Dashboard() {
       const data = await fetchIncidents();
       setIncidents(data);
       setLastUpdated(new Date());
-      if (showToast && data.length > 0) {
-        toast({
-          title: "Données mises à jour",
-          description: `${data.length} incidents récupérés.`,
-        });
-      }
     } catch (error) {
       console.error("Error loading incidents:", error);
       toast({
@@ -51,7 +44,7 @@ export function Dashboard() {
     
     // Set up polling every 5 seconds
     const intervalId = setInterval(() => {
-      loadIncidents(true);
+      loadIncidents(false);
     }, 5000);
     
     // Cleanup on unmount
