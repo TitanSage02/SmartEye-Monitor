@@ -50,13 +50,13 @@ export function Dashboard() {
     }
   }, []);
 
-  // Chargement initial et mise en place du polling toutes les 60 secondes
+  // Chargement initial et mise en place du polling toutes les 10 secondes
   useEffect(() => {
     loadIncidents();
     // Pour alléger le polling, on pense à suspendre les appels quand l'onglet est inactif (API Page Visibility) plus tard
     const intervalId = setInterval(() => {
       loadIncidents();
-    }, 60000); // 60 secondes
+    }, 10000); // 10 secondes
 
     return () => clearInterval(intervalId);
   }, [loadIncidents]);
