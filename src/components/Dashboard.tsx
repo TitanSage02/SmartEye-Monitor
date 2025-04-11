@@ -50,13 +50,14 @@ export function Dashboard() {
     }
   }, []);
 
-  // Chargement initial et mise en place du polling toutes les 10 secondes
+  // Chargement initial et mise en place du polling toutes les 60 secondes
   useEffect(() => {
     loadIncidents();
     // Pour alléger le polling, on pense à suspendre les appels quand l'onglet est inactif (API Page Visibility) plus tard
     const intervalId = setInterval(() => {
       loadIncidents();
-    }, 10000);
+    }, 60000); // 60 secondes
+
     return () => clearInterval(intervalId);
   }, [loadIncidents]);
 
@@ -119,7 +120,7 @@ export function Dashboard() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
-            Dashboard de Monitoring
+            SmartEyes | Monitoring
           </h1>
           <p className="text-muted-foreground">
             Surveillance des incidents en temps réel
